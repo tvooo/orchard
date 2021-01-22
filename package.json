@@ -1,0 +1,10 @@
+{
+  "name": "orchard",
+  "version": "1.0.0",
+  "description": "A personal wiki, outliner, and task manager",
+  "main": "index.js",
+  "repository": "https://github.com/tvooo/orchard",
+  "author": "Tim von Oldenburg <tim@tvooo.de>",
+  "license": "UNLICENSED",
+  "private": true
+}
