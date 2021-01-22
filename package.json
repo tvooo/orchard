@@ -1,20 +1,41 @@
 {
-  "name": "orchard",
-  "version": "1.0.0",
-  "description": "A personal wiki, outliner, and task manager",
-  "main": "index.js",
-  "repository": "https://github.com/tvooo/orchard",
-  "author": "Tim von Oldenburg <tim@tvooo.de>",
-  "license": "UNLICENSED",
-  "private": true,
-  "devDependencies": {
-    "@commitlint/cli": "^11.0.0",
-    "@commitlint/config-conventional": "^11.0.0",
-    "husky": "^4.3.8"
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
-  }
+	"name": "orchard",
+	"version": "1.0.0",
+	"description": "A personal wiki, outliner, and task manager",
+	"main": "index.js",
+	"repository": "https://github.com/tvooo/orchard",
+	"author": "Tim von Oldenburg <tim@tvooo.de>",
+	"license": "UNLICENSED",
+	"private": true,
+	"scripts": {
+		"lint": "pretty-quick --staged && lint-staged"
+	},
+	"devDependencies": {
+		"@commitlint/cli": "^11.0.0",
+		"@commitlint/config-conventional": "^11.0.0",
+		"@typescript-eslint/eslint-plugin": "^4.14.0",
+		"@typescript-eslint/parser": "^4.14.0",
+		"eslint": "^7.18.0",
+		"eslint-config-airbnb": "^18.2.1",
+		"eslint-config-prettier": "^7.2.0",
+		"eslint-plugin-import": "^2.22.1",
+		"eslint-plugin-jsx-a11y": "^6.4.1",
+		"eslint-plugin-prettier": "^3.3.1",
+		"eslint-plugin-react": "^7.22.0",
+		"eslint-plugin-react-hooks": "^4.2.0",
+		"husky": "^4.3.8",
+		"lint-staged": ">=10",
+		"prettier": "^2.2.1",
+		"pretty-quick": "^3.1.0",
+		"typescript": "^4.1.3"
+	},
+	"husky": {
+		"hooks": {
+			"commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+			"pre-commit": "yarn lint"
+		}
+	},
+	"lint-staged": {
+		"*.{ts,tsx}": "eslint --cache --fix"
+	}
 }
